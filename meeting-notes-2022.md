@@ -1,5 +1,312 @@
-### Meeting Notes
+# Notary v2 Meeting Notes 2022
 
+## Dec 22, 2022
+
+### Attendees:
+- Toddy Mladenov
+- Vani Rao
+
+### Agenda Items:
+- Manifest Fallback Support
+    - Vani is working with Nima
+    - Toddy is investigating the behavious of various registries
+- Extracting the descriptor from the signature in `notation inspect`
+    - We can investigate what would it take to add this capability
+    - We should at least cover how to do that using JWS- and COSE-specific parsers in the documentation
+
+## Dec 19, 2022
+
+### Attendees:
+- Toddy Mladenov
+- Yi Zha
+- Shiwei Zhang
+- Patrick Zheng
+- Feynman Zhou
+- Samir Kakkar
+- Vani Rao
+- Junjie Gao
+- Nima Talebi
+- _add yourself_
+
+### Agenda Items:
+- Planning for the Manifest Fallback Support (Vani/Nima)
+- Notation inspect command review/discussion (Samir/Vani)
+- Do we need docker client running on machine for registry creds in notation? (Pritesh)
+- For PRs created by dependabot like the follows, do we still need approvals from different orgs？(Yi)
+    - [build(deps): bump oras.land/oras-go/v2 from 2.0.0-rc.5 to 2.0.0-rc.6](https://github.com/notaryproject/notation/pull/488)
+
+### Notes:
+- Implementation planning for Manifest Fallback support to be shared next week.
+- Oras CLI fallback feature test results to be shared.
+- PRs created by dependabot will still need approvals from different orgs, collectively it will be priortized from both orgs to get merged quickly.
+
+## Dec 15, 2o22
+
+### Attendees:
+- Toddy Mladenov
+- Vani Rao
+- Samir Kakkar
+
+### Agenda Items:
+- Review the roadmap items and see if anything needs to be brought in for RC-2 ( Samir)
+- The purpose of the roadmap repo (Samir)
+
+### Notes:
+- _meeting minutes
+
+# # Dec 12, 2022
+
+### Attendees:
+- Toddy Mladenov
+- Vani Rao
+- Samir Kakkar
+- Yi Zha
+- Patrick Zheng
+
+
+### Agenda Items
+- Fallback Support Priority. Any further updates  from the other community ? (Vani)
+- RC.2 release items priority from customers perspective (Vani)
+    - Semantic Versioning https://github.com/orgs/notaryproject/projects/10/views/22
+    - Notation inspect signature iteratively will be a good feature for rc.2 from customers perspective https://github.com/orgs/notaryproject/projects/10/views/22
+    -  Include Metadata at the time of signing (Attestations) which is also iterative and additional feature for customers https://github.com/notaryproject/roadmap/issues/67
+- E2E Testing and Debug logging can be moved to rc.3 because we already have a version of it in rc.1, since both are incremental, this can be moved. Any opinions (Vani)
+
+### Notes
+
+
+
+
+
+# # Dec 8, 2022
+
+### Agenda Items
+- Fallback Support Priority/resourcing
+- Release date Dec 5, 2022 for rc.1 release, see [summary](https://github.com/notaryproject/notaryproject/discussions/205#discussioncomment-4253480). (Yi)
+- rc.2 plan, see [discussion](https://github.com/notaryproject/notaryproject/discussions/206#discussioncomment-4253559). (Yi)
+- New Notary website [prototype preview](https://www.figma.com/file/sV3L1CedpMhuO6qXyaipbV/Notary-website-landing-page?node-id=0%3A1&t=Qk8mLGjaTLSOJkqA-1) and ask for feedback (Feynman)
+
+### Notes
+- Fallback support
+    - https://github.com/oras-project/oras-go/issues/362
+    - https://github.com/notaryproject/notation/issues/444
+- Notary compatibility
+    - We discussed prioritzing the following:
+        1. Stabilizing the signature format so content signed with RC1 can be consumed by all subsequent releases. The APIs may have additive or breaking changes
+        2. Stability the APIs so users can pull newer versions, or use older versions of the notation cli or the notation-go library without concerns of breaking changes
+        3. Adding capabiliites that are still backwards compatible, but older versions aren't necessarilty compatible. This could be in signature content, or apis. The user would need to update their clients to support the new capability. This is to avoid a frozen state of the project.
+
+## Dec 05 2022
+
+### Attendees:
+- Vani Rao
+- Samir Kakkar
+- Toddy Mladenov
+- Pritesh Bandi
+- Yi Zha
+- Patrick Zheng
+- Sajay Antony
+- Feynman Zhou
+- Shiwei Zhang
+- Steve Lasker
+
+### Agenda Items:
+- rc.1 release readiness Dec 5, 2023 - Resolve the usage of "notation remove" vs "Notation delete" https://github.com/notaryproject/notation/pull/466  (Vani)
+- Release notation v1.0.0-rc.1 (Yi)
+- rc.2 scope and timeline, see [latest proposal](https://github.com/notaryproject/notaryproject/discussions/206#discussioncomment-4279018) (Yi)
+- rc.2 plan and new proposed date, see [latest scope proposal](https://github.com/notaryproject/notaryproject/discussions/206#discussioncomment-4253559) (Vani)
+- Restrict permissions on repos (Pritesh)
+- Discuss the roadmap items and move things in the "roadmap" repo accordingly (Samir)
+
+### Notes:
+- _meeting minutes_
+- Need to clarify the behavior for registry backwards compat, when the registry doesn't support OCI Artifact Manifest: TODO: Open an issue/PR on [Signature Specification](https://github.com/notaryproject/notaryproject/blob/main/specs/signature-specification.md)
+- Related issues:
+    - [oras-go to automatically support uplevel artifact manifest and downlevel registries #362](https://github.com/oras-project/oras-go/issues/362)
+    - [[Fallback Support]Notation uses OCI image manifest to store the signature in the repository. #444](https://github.com/notaryproject/notation/issues/444)
+    - [OCI & ORAS Artifact, Registry Interop](https://hackmd.io/Xq6HSDt5QZ-TMYnGk2jlGQ)
+
+## Nov 28, 2022
+
+### Attendees
+- Vani Rao
+- Samir Kakkar
+- Toddy Mladenov
+- Pritesh Bandi
+- Yi Zha
+- Patrick Zheng
+- Sajay Antony
+- Feynman Zhou
+- Shiwei Zhang
+
+### Agenda Items
+- Release date Dec 5, 2022 for rc.1 release, see [summary](https://github.com/notaryproject/notaryproject/discussions/205#discussioncomment-4253480). (Yi)
+- rc.2 plan, see [discussion](https://github.com/notaryproject/notaryproject/discussions/206#discussioncomment-4253559). (Yi)
+- New Notary website [prototype preview](https://www.figma.com/file/sV3L1CedpMhuO6qXyaipbV/Notary-website-landing-page?node-id=0%3A1&t=Qk8mLGjaTLSOJkqA-1) and ask for feedback (Feynman)
+
+
+### Notes
+
+
+## Nov 21, 2022
+
+### Attendees
+- Yi Zha
+- Patrick Zheng
+- Vani Rao
+- Pritesh Bandi
+- Samir Kakkar
+
+### Agenda Items
+- Code freeze targeted EOD of Wed Pacific time, E2E Testing will start Thursday and Friday. Status [check-in](https://github.com/notaryproject/notaryproject/discussions/205).
+- Confirm fallback to image manifest is not in rc.1, see [illustration](https://github.com/notaryproject/notation/issues/444).
+- Discuss any special documentations or blogs required for rc.1, since it is a major milestone.
+- Rc.2 scope [discussion](https://github.com/notaryproject/notaryproject/discussions/206#discussioncomment-4192529) (if we have time).
+
+### Notes
+- 
+
+## Nov 17, 2022
+
+### Attendees
+Vani Rao
+Samir Kakkar
+Toddy Mladenov
+Pritesh
+Roy Williams
+
+### Agenda Items
+- Rc.1 release status update, see discussion https://github.com/notaryproject/notaryproject/discussions/205 (Yi)
+    - Suggest to scope out more issues and set code freeze date on Nov 23.
+- rc.2 scope discussion kick-off, see discussion https://github.com/notaryproject/notaryproject/discussions/206, please add your comments there. (Yi)
+    - Suggest plan regular releases per monthly cadence
+    - Suggest plan on-demand releases for critical issues.
+
+### Notes
+- Unblock of Ratify is done. Ratify dates will not be delayed.
+- Notation-Go refactoring have two PRs (#200 and #207) left for review. #207 is waiting for rebase. There is not too much left to do on that.
+- Notation CLI should be fine. We need to update the CLI after the refactoring of Notation-Go
+- Notation using OCI artifacts to store signatures is done in the library.
+- For the timeout we should have a write up for the behavior as part of RC.1 but implementation is not blocking for RC.1.
+- Tag to SHA translation - spec is in review right now. Improving the documentation and the output from the CLI implementation will be post RC.1.
+
+## Nov 14, 2022
+
+### Attendees:
+- Pritesh
+- Toddy M
+- Vani
+- Patrick Zheng
+- Feynman
+- Sajay
+- Yi Zha
+
+### Agenda Items:
+- Changed the meeting timing for Monday based on the daylight time saving. Send the latest invite for 4:00 PM PST timeframe.
+- Approve and merge #186, with following issues to be addressed after refactoring (Yi) -- This will unblock Ratify since the API interfaces are reviewed and aligned
+    - https://github.com/notaryproject/notation-go/issues/201
+    - https://github.com/notaryproject/notation-go/issues/197
+- [Fallback support](https://cloud-native.slack.com/archives/CQUH8U287/p1668100458892709): Should we support artifact manifest fallback if its not an OCI image / distribution spec? Also, how will manifest fallback work? If notation is not able to push artifact manifest, notation will try to push oci manifest? If so are there any sharp edges? (Pritesh)
+```
+- Update the signature manifest spec to accept both the OCI Artifact manifest and the OCI image manifest.
+    - Update the signature manifest spec to accept both the OCI Artifact manifest and the OCI image manifest.
+    - The client SHOULD generate and push OCI Artifact manifest to the remote registry.
+    - The client SHOULD NOT generate and push OCI Image manifest to the remote registry.
+    - The spec MUST NOT define anything related on the manifest fallback but accepts two manifest types.
+    - For the OCI image manifest, the spec SHOULD define how the config blob is generated and processed.
+- Update notation-go implementation and documentation.
+    - On push, it pushes OCI image manifest if the attempt of OCI artifact manifest fails due to not being supported by the remote registry.
+    - On pull, it accepts both manifest type
+```
+- Potential RC1 issues (Pritesh)
+    - [During verification use signature filtering ](https://github.com/notaryproject/notation-go/issues/197)
+    - [GenerateEnvelope plugin request doesnot have expiry.](https://github.com/notaryproject/notation/issues/443)
+    -  [Using timeout as the restricting mechanism fo signature verification #201 
+](https://github.com/notaryproject/notation-go/issues/201)
+- [fractional second support](https://cloud-native.slack.com/archives/CQUH8U287/p1667934661142869) for expiry and signing time - Whats the usecase? (Pritesh)
+- Website and documentation - Toddy
+### Notes:
+- Yi to discuss with Steve on the rescheduling the invite for Monday from 5:00 PM PST to 4:00 PM PST.
+- RC1 supports registries that are compliant with OCI Artifact Manifest like ECR, ACR, Zot. The fallback solution stated above in agenda will be moved to RC2 and will need more deep dive on the approach and solution.
+- During verification use signature filtering will be moved out of RC1 scope and will be taken into RC2.
+- GenerateEnvelope plugin request doesnot have expiry has two parts to it - 1. Spec update (Pritesh/Vani) and 2. Implementation (MSFT). This issue will be in scope for RC1.
+- 
+
+
+## Nov 10, 2022
+### Attendees:
+ - Vani Rao
+ - Toddy SM
+ - Samir Kakkar
+ - David Tesar
+ 
+### Agenda Items:
+- OCI compatibility https://cloud-native.slack.com/archives/CQUH8U287/p1668101298107019?thread_ts=1668100458.892709&cid=CQUH8U287
+- Open SSF Scorecard issues https://github.com/notaryproject/notation/issues/408
+    - Security Incident Response
+    - CNCF Fuzzing
+- What's supported/stable at RC-1
+- Website/Documentation support
+
+### Meeting Notes
+- We will implement OCI for RC-1.  It isn't sure how this has been factored into timeline.  Samir was unsure of why ORAS can't handle this on it's own, but will wait for Yi's spec for futher discussion.
+- We should implement a security incident response page ideally for RC-1.  Waiting to see if enhancements in coming days from GitHub may meet our needs, but regardless will need a security incident response page.  This is raised on CNCF scorecard as well.
+- There is possiblity for resources from CNCF to support/add fuzzing to the project.  I reached out on Slack to security thread, but still no response. https://cloud-native.slack.com/archives/CDMCCN2SJ/p1667949707733439  Not critical for RC-1, but would be good to get in the queue to get CNCF resource support here.
+- Supportibility: On the client side, the sub commands which are marked supported for RC-1 will be in the release notes if we don't implement any of the suggestions here: https://github.com/notaryproject/notation/discussions/257
+- Supportibility: On the API side we should try to not have any major breaking changes although realize this *might* be possible and will defer to SemVer to help with this.
+- Supportibility: Biggest factor is having stable signature stamp for what is signed so future versions will be able to verify previous things which are signed.
+- AWS will take a look at all of the items here: https://github.com/notaryproject/notaryproject.dev/issues/77#issuecomment-1291667125 and get back to us on the #notary-docs channel on where they can help.  Agree we need to have more regular updates and can post link(s) to vendor-specific implementation updates at least for RC-1.
+
+
+## Nov 7, 2022
+### Attendees:
+ - Yi Zha
+ - Sajay Antony
+ - Feynman Zhou
+ - Shiwei Zhang
+ - Patrick Zheng
+ - Rakesh Gariganti
+ - Vani Rao
+ - Toddy SM
+ - Samir Kakkar
+ - Jungie Gao
+ 
+### Agenda Items:
+- What we can do to improve the Trust policy UX for rc.1 release? https://github.com/notaryproject/notation/issues/398 (Yi)
+- Reopening https://github.com/notaryproject/notation-core-go/issues/88 as this is causing an issue with verification plugins (Rakesh)
+- Stay on track to unblock Ratify as of 11/11/2022.
+
+### Meeting Notes
+- Agreed to move time to 4:00 PM PST( Basically keeping the time the same)
+- Need to make getting started easier. Requires a user story created for a command like `notation init`
+    - Can we create good default trust policy 
+    - can we take user inputs to enable a good experience for signing and verification
+- Trust policy needs improvements to enable adding/removing scopes 
+- Define use cases of possible improvements for adding allow/deny list and with support for wildcard scopes. 
+
+## Nov 2, 2022
+
+### Attendees:
+- Vani Rao
+- Patrick Zheng
+- Samir Kakkar
+- Rakesh Gariganti
+- Shiwei Zhang
+- Yi Zha 
+- Feynman Zhou
+- Toddy Mladenov
+- Junjie Gao
+- David Tesar
+
+### Agenda Items:
+- Continue to review [refactoring Notation-go proposal](https://hackmd.io/nAV5ipF1TKyxFdrO7_75Mg?view)
+- Check the release status of Notation beta.1
+- HLE 1-2 days estimate to complete refactoring work in notation-go for Ratify TS/TP development - MSFT or we can take it starting tomorrow and complete it by Monday.
+- If this is completed by Monday, can MSFT estimate Ratify time frame to complete the TS/TP and what is the date look like prior to 12/01.
+- Is all refactoring notation work needed, this is something new that got added to RC-1, so along with the tasks on RC-1 Github what is the time estimate to hit 11/15 for RC-1. What is must TOGO for RC-1 and what can be moved to RC-2.
+- Come up with a plan to hit 11/15 date for RC-1 across all the items and complete the estimation on the GITHUB which has no assignment.
+
+### Meeting Notes
 
 ## Oct 31, 2022
 ### Attendees:
