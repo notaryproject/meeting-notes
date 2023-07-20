@@ -1,6 +1,6 @@
 # Meeting Notes
 
-This repository contains archived meeting notes for Notary Project [community meetings](https://notaryproject.dev/community/#community-meetings).
+This repository is in active development and contains archived meeting notes for Notary Project [community meetings](https://notaryproject.dev/community/#community-meetings).
 
 Please see the Notary Project [README](https://github.com/notaryproject/.github/blob/main/README.md) file to learn about overall Notary Project. 
 
