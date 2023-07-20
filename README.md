@@ -1,8 +1,12 @@
-# Archive of Meeting Notes from Hackmd.io
+# Meeting Notes
 
-Active notes are captured at [Notary Project Meeting Notes](https://hackmd.io/_vrqBGAOSUC_VWvFzWruZw?view)
+This repository contains archived meeting notes for Notary Project [community meetings](https://notaryproject.dev/community/#community-meetings).
 
-To avoid Hackmd having to index historical content, yearly archives will be moved here.
+Please see the Notary Project [README](https://github.com/notaryproject/.github/blob/main/README.md) file to learn about overall Notary Project. 
+
+Active meeting notes are captured at [Notary Project Meeting Notes](https://hackmd.io/_vrqBGAOSUC_VWvFzWruZw?view)
+
+To avoid Hackmd having to index historical content, yearly archives will be stored here.
 
 - [Notary Project Meeting Notes - 2022 Archive](./meeting-notes-2022.md)
 - [Notary Project Meeting Notes - 2021 Archive](./meeting-notes-2021.md)
