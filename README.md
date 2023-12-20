@@ -8,6 +8,7 @@ Active meeting notes are captured at [Notary Project Meeting Notes](https://hack
 
 Meeting notes are archived on annual basis in this repository.
 
+- [Notary Project Meeting Notes - January 2023 to June 2023 Archive](./meeting-notes-2023-jan-to-jun.md)
 - [Notary Project Meeting Notes - 2022 Archive](./meeting-notes-2022.md)
 - [Notary Project Meeting Notes - 2021 Archive](./meeting-notes-2021.md)
 - [Notary Project Meeting Notes - 2020 Archive](./meeting-notes-2020.md)
